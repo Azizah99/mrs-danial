@@ -1,0 +1,31 @@
+=============================================
+EXPLANATION FOOD DELIVERY PROJECT
+
+1. Register Account (Public)
+2. Session Validation: Logout, user cannot access the website or user is null (Public)
+3. View/Edit Profile: Edit password (Public)
+
+4. Consistent GUI (Last)
+
+5. CRUD + Activation (ADMIN)
+	: Create- New dishes (Upload picture: optional)
+	: Read- Display menu list
+	: Update- Click and update dishes information
+          - in process
+          - preparation
+          - delivered
+	: Delete- Delete any dishes
+	: Activation- If dishes unavailable, so deactive dishes
+
+   CRUD + Activation (CLIENT)
+        : Create- Order
+        : Read- Display dishes (Display picture: optional)
+        : Update- Order
+        : Delete- Order
+
+6. User transaction & history (Client)
+
+7. Admin manage user transaction (Admin: Example(View Cash Request))
+8. Reporting: Status Info (Client)
+
+=============================================
