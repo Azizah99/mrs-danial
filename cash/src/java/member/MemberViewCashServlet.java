@@ -6,7 +6,7 @@
 
 package member;
 
-import bean.CashRequest;
+import bean.Order;
 import bean.User;
 import java.io.IOException;
 import java.sql.Connection;
@@ -84,7 +84,7 @@ public class MemberViewCashServlet extends HttpServlet {
                 String symbol = rs.getString("symbol");
                 String status = rs.getString("status");
                 
-                CashRequest rqc = new CashRequest();
+                Order rqc = new Order();
                 rqc.setAmount(amount);
                 rqc.setSymbol(symbol);
                 rqc.setStatus(status);

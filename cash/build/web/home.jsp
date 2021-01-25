@@ -59,7 +59,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/cash/GetCashServlet"><span class="glyphicon glyphicon-usd"></span> Get Cash</a></li>
+            <li><a href="/cash/ViewDishServlet">View Dish List</a></li>
             <li><a href="/cash/MemberViewCashServlet"><span class="glyphicon glyphicon-th-list"></span> View Cash</a></li> 
           </ul>
           <ul class="nav navbar-nav navbar-right">

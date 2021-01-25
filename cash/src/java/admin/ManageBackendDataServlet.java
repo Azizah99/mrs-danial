@@ -5,7 +5,7 @@
 package admin;
 
 import bean.User;
-import bean.Currency;
+import bean.Dish;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -35,15 +35,12 @@ public class ManageBackendDataServlet extends HttpServlet {
     {
         String driver = "com.mysql.jdbc.Driver";
 
-        String dbName = "cash";
+        String dbName = "food_delivery";
         String url = "jdbc:mysql://localhost/" + dbName + "?";
         String userName = "root";
         String password = "";
 
-        jdbcUtility = new JDBCUtility(driver,
-                                      url,
-                                      userName,
-                                      password);
+        jdbcUtility = new JDBCUtility(driver, url, userName, password);
 
         jdbcUtility.jdbcConnect();
         con = jdbcUtility.jdbcGetConnection();
@@ -64,32 +61,34 @@ public class ManageBackendDataServlet extends HttpServlet {
         //Get the session object
 	HttpSession session = request.getSession();
         
-        ArrayList currenyList = new ArrayList();        
+        ArrayList dishList = new ArrayList();        
         
-        String sqlQuery = "SELECT * FROM currency ORDER BY name ASC";        
+        String sqlQuery = "SELECT * FROM dishes ORDER BY menu ASC";        
         try {
             PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
             ResultSet rs = preparedStatement.executeQuery();
             
             while (rs.next()) {
-                String currencyName = rs.getString("name");
-                String currencySymbol = rs.getString("symbol");
-                String currencyStatus = rs.getString("status");
+                String menu = rs.getString("menu");
+                double price = rs.getDouble("price");
+                String status = rs.getString("status");
+                String category = rs.getString("category");
                 int id = rs.getInt("id");
                 
-                Currency currency = new Currency();
-                currency.setName(currencyName);
-                currency.setSymbol(currencySymbol);
-                currency.setStatus(currencyStatus);
-                currency.setId(id);
-                currenyList.add(currency);
+                Dish dish = new Dish();
+                dish.setMenu(menu);
+                dish.setPrice(price);
+                dish.setStatus(status);
+                dish.setCategory(category);
+                dish.setId(id);
+                dishList.add(dish);
             }
         }
         catch (SQLException ex) {            
         }
         
-        session.setAttribute("currencylist", currenyList);
-        response.sendRedirect(request.getContextPath() + "/admin/managecurrency.jsp");
+        session.setAttribute("dishlist", dishList);
+        response.sendRedirect(request.getContextPath() + "/admin/dish-list.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

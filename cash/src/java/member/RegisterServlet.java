@@ -34,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
     {
         String driver = "com.mysql.jdbc.Driver";
 
-        String dbName = "cash";
+        String dbName = "food_delivery";
         String url = "jdbc:mysql://localhost/" + dbName + "?";
         String userName = "root";
         String password = "";
@@ -62,23 +62,23 @@ public class RegisterServlet extends HttpServlet {
             throws ServletException, IOException {
         
         //get form data from VIEW > V-I
-        String login = request.getParameter("login");
+        String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        String fullName = request.getParameter("fullname");
+        String fullName = request.getParameter("fullName");
         String userType = "client";
         
-        String sqlInsert = "INSERT INTO user(login, password, usertype, fullname) VALUES(?, ?, ?, ?)"; 
+        String sqlInsert = "INSERT INTO user(userName, password, usertype, fullname) VALUES(?, ?, ?, ?)"; 
         
         try {
             PreparedStatement preparedStatement = con.prepareStatement(sqlInsert);
-            preparedStatement.setString(1, login);
+            preparedStatement.setString(1, userName);
             preparedStatement.setString(2, password);
             preparedStatement.setString(3, userType);
             preparedStatement.setString(4, fullName);
             preparedStatement.executeUpdate();
             
             User user = new User();
-            user.setLogin(login);
+            user.setUserName(userName);
             user.setFullName(fullName);
             user.setPassword(password);
             

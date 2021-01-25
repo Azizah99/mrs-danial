@@ -6,7 +6,7 @@
 
 package member;
 
-import bean.CashRequest;
+import bean.Order;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -86,7 +86,7 @@ public class RequestCashProcessServlet extends HttpServlet {
                 symbol = rs.getString("symbol");
             }
             
-            CashRequest rqc = new CashRequest();
+            Order rqc = new Order();
             rqc.setSymbol(symbol);
             rqc.setAmount(Double.parseDouble(amount));
             rqc.setStatus("in process");

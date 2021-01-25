@@ -34,7 +34,7 @@ public class MemberChangePasswordServlet extends HttpServlet {
     {
         String driver = "com.mysql.jdbc.Driver";
 
-        String dbName = "cash";
+        String dbName = "food_delivery";
         String url = "jdbc:mysql://localhost/" + dbName + "?";
         String userName = "root";
         String password = "";
@@ -65,17 +65,17 @@ public class MemberChangePasswordServlet extends HttpServlet {
 	HttpSession session = request.getSession();
         
         User user = (User)session.getAttribute("memberprofile");
-        String login = user.getLogin();
+        String userName = user.getUserName();
         
         //get form data from VIEW > V-I        
         String password = request.getParameter("password");
         
-        String sqlUpdate = "UPDATE user SET password= ? WHERE login = ?"; 
+        String sqlUpdate = "UPDATE user SET password= ? WHERE userName = ?"; 
         
         try {
             PreparedStatement preparedStatement = con.prepareStatement(sqlUpdate);
             preparedStatement.setString(1, password);
-            preparedStatement.setString(2, login);
+            preparedStatement.setString(2, userName);
             preparedStatement.executeUpdate();
         }
         catch (SQLException ex) {            

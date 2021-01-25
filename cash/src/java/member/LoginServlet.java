@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
     {
         String driver = "com.mysql.jdbc.Driver";
 
-        String dbName = "cash";
+        String dbName = "food_delivery";
         String url = "jdbc:mysql://localhost/" + dbName + "?";
         String userName = "root";
         String password = "";
@@ -66,28 +66,28 @@ public class LoginServlet extends HttpServlet {
         //Get the session object
 	HttpSession session = request.getSession();
         
-        String login = request.getParameter("login");
+        String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String userType = "", fullName = "", image = "";
         
-        String sqlQuery = "SELECT * FROM user WHERE login = ? AND password = ? AND usertype = 'client'";
+        String sqlQuery = "SELECT * FROM user WHERE userName = ? AND password = ? AND usertype = 'client'";
         
         try {
             PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
-            preparedStatement.setString(1, login);
+            preparedStatement.setString(1, userName);
             preparedStatement.setString(2, password);
             ResultSet rs = preparedStatement.executeQuery();
             
             while (rs.next()) {
                 userType = rs.getString("usertype");
                 fullName = rs.getString("fullname");
-                image = rs.getString("image");
+                
                 
                 user = new User();
-                user.setLogin(login);
+                user.setUserName(userName);
                 user.setFullName(fullName);
                 user.setUserType(userType);
-                user.setImage(image);
+              
             }
         }
         catch (SQLException ex) {            

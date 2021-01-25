@@ -11,21 +11,9 @@ import java.io.Serializable;
  * @author MSI
  */
 public class User implements Serializable {
-    private String login, password, userType, fullName, image;
+    private String userName, password, userType, fullName, image;
+    private int id;
 
-    /**
-     * @return the login
-     */
-    public String getLogin() {
-        return login;
-    }
-
-    /**
-     * @param login the login to set
-     */
-    public void setLogin(String login) {
-        this.login = login;
-    }
 
     /**
      * @return the password
@@ -81,5 +69,33 @@ public class User implements Serializable {
      */
     public void setImage(String image) {
         this.image = image;
+    }
+
+    /**
+     * @return the userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    /**
+     * @param userName the userName to set
+     */
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }
