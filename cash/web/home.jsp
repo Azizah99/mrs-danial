@@ -1,8 +1,3 @@
-<%-- 
-    Document   : home
-    Created on : Nov 5, 2014, 4:45:15 PM
-    Author     : MSI
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -24,7 +19,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Cash - Member</title>
+    <title>FoodyMoody - Member</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +50,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">CashWeb</span></a>
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">FOODY MOODY</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -69,7 +64,6 @@
                             (Member) <b class="caret"></b></a>
 			        <ul class="dropdown-menu">
 			          <li><a href="/cash/memberprofile.jsp"><span class="glyphicon glyphicon-user"></span> User Profile</a></li>
-			          <li><a href="/cash/MemberSettingServlet"><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
 			          <li class="divider"></li>
 			          <li><a href="/cash/logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			        </ul>
@@ -83,26 +77,18 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Cash Web-App example</h1>
+        <h1>WELCOME TO FOODY MOODY</h1>
         <ul>
-          <li>Responsive application</li>
-          <li>Bootstrap CSS</li>
-          <li>MVC
-            <ul>
-              <li>(M)odel - JavaBeans</li>
-              <li>(V)iew - JSP for input and output</li>
-              <li>(C)ontroller - Servlet</li>
+          <li>Fast delivery, deals & discounts and the best choice of restaurants. Order now! Choose your food, relax and we do the rest!
             </ul>
-          </li>
-        </ul>
       </div>
       
       <div class="well">
-        <h3>Member Login successful! - Welcome <span style="color:#FFFF00"><jsp:getProperty name="memberprofile" property="fullName"/></span></h3>
+          <h3>Member Login successful! - Welcome <span style="color:#FFFF00"><jsp:getProperty name="memberprofile" property="fullName"/></span></h3>
       </div>
       
       <footer>
-      	<p>&copy; RBK 2014 - SCJ/SCSJ 2303/3303</p>
+      	<p>Copyright &copy; 2021 FoodyMoody</p>
       </footer>
 
     </div> <!-- /container -->

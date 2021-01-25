@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author MSI
  */
 public class User implements Serializable {
-    private String userName, password, userType, fullName, image;
+    private String userName, password, userType, fullName;
     private int id;
 
 
@@ -57,19 +57,6 @@ public class User implements Serializable {
         this.fullName = fullName;
     }
 
-    /**
-     * @return the image
-     */
-    public String getImage() {
-        return image;
-    }
-
-    /**
-     * @param image the image to set
-     */
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     /**
      * @return the userName

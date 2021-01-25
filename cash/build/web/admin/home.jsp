@@ -1,8 +1,3 @@
-<%-- 
-    Document   : home
-    Created on : Nov 5, 2014, 5:03:36 PM
-    Author     : MSI
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -62,7 +57,6 @@
                         </a>
 			<ul class="dropdown-menu">
 			    <li><a href="/cash/admin/UserProfileServlet"><span class="glyphicon glyphicon-user"></span> User Profile</a></li>
-			    <li><a href="/cash/admin/SettingServlet"><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
 			    <li class="divider"></li>
 			    <li><a href="/cash/admin/logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			</ul>

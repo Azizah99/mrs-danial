@@ -1,9 +1,3 @@
-<%-- 
-    Document   : register
-    Created on : Nov 5, 2014, 2:42:17 PM
-    Author     : MSI
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -16,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Cash - Guest</title>
+    <title>FoodyMoody - Guest</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/cash/index.html"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">CashWeb</span></a>
+          <a class="navbar-brand" href="/cash/index.html"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">FOODY MOODY</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -70,16 +64,10 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Cash Web-App example</h1>
+        <h1>WELCOME TO FOODY MOODY</h1>
         <ul>
-          <li>Responsive application</li>
-          <li>Bootstrap CSS</li>
-          <li>MVC
-            <ul>
-              <li>(M)odel - JavaBeans</li>
-              <li>(V)iew - JSP for input and output</li>
-              <li>(C)ontroller - Servlet</li>
-            </ul>
+          <li>Fast delivery, deals & discounts and the best choice of restaurants. Order now! Choose your food, relax and we do the rest!
+            
           </li>
         </ul>
       </div>
@@ -93,9 +81,9 @@
 <form class="form-horizontal" action="/cash/RegisterServlet" method="post">
   <fieldset>
     <div class="form-group">
-      <label for="login" class="col-lg-2 control-label">Login</label>
+      <label for="login" class="col-lg-2 control-label">Username</label>
       <div class="col-lg-10">
-        <input class="form-control" id="login" name="login" placeholder="Login" type="text" required>
+        <input class="form-control" id="userName" name="userName" placeholder="Username" type="text" required>
       </div>
     </div>
     <div class="form-group">
@@ -105,9 +93,9 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="fullname" class="col-lg-2 control-label">Full name</label>
+      <label for="fullname" class="col-lg-2 control-label">Full Name</label>
       <div class="col-lg-10">
-        <input class="form-control" id="fullname" name="fullname" placeholder="Full name" type="text" required>
+        <input class="form-control" id="fullName" name="fullName" placeholder="Full name" type="text" required>
       </div>
     </div>
     <div class="form-group">
@@ -124,7 +112,7 @@
       
       <div class="well">
       <footer>
-      	<p>&copy; RBK 2014 - SCJ/SCSJ 2303/3303</p>
+      	<p>Copyright &copy; 2021 FoodyMoody</p>
       </footer>
       </div>
 

@@ -68,7 +68,7 @@ public class LoginServlet extends HttpServlet {
         
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        String userType = "", fullName = "", image = "";
+        String userType = "", fullName = "";
         
         String sqlQuery = "SELECT * FROM user WHERE userName = ? AND password = ? AND usertype = 'client'";
         
