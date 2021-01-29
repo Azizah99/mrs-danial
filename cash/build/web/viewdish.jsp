@@ -57,8 +57,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/cash/GetCashServlet"><span class="glyphicon glyphicon-usd"></span> Get Cash</a></li>
-                    <li class="active"><a href="/cash/MemberViewCashServlet"><span class="glyphicon glyphicon-th-list"></span> View Cash</a></li> 
+                    <li class="active"><a href="/cash/ViewDishServlet"><span class="glyphicon glyphicon-th-list"></span> View Dish</a></li> 
+                    <li><a href="/cash/ViewCartServlet"><span class="glyphicon glyphicon-th-list"></span> View Cart</a></li>
+                    <li><a href="/cash/ViewOrderServlet"><span class="glyphicon glyphicon-th-list"></span> View Order</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -92,8 +93,7 @@
                 <div class="col-md-12"> 
                 <h3>Menu list</h3>                
                 <div class="table-responsive">
-                    <form action="addOrderServlet" method="post">
-                        <input type="hidden" name="command" value="ADD">
+                    
                     <table class="table table-striped table-hover ">
                         <thead>
                             <tr>
@@ -107,22 +107,28 @@
                             <tbody>
                                  
                                 <c:forEach items="${sessionScope.dishList}" var="currentdishlist" varStatus="loop">                                
-                                  
+                                  <form action="/cash/addOrderServlet">
                                      <tr>
                                              
                                         <td><c:out value="${currentdishlist.menu}" /></td>
                                         <td><c:out value="${currentdishlist.price}" /></td>
                                         <td><c:out value="${currentdishlist.category}" /></td>
                                
-                                    <td><input type="number" id="quantity" name="quantity" placeholder="0">
-                                            <input type="hidden" name="id" value="${currentdishlist.id}">
+                                    <td>
+                                            <input type="text" id="quantity" name="quantity" placeholder="0">
+                                            <input type="hidden" name="menu" value="${currentdishlist.menu}">
+                                            <input type="hidden" name="userName" value="<jsp:getProperty name="memberprofile" property="userName"/>">
                                     </td>      
-                                        <td><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>Add</button> </td> 
+                                        <td> 
+                                            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>Add</button> 
+                                        </td> 
                                 
                                      </tr>
+                                  </form>
                                 </c:forEach>
                             </tbody> 
-                        </table>    </form>
+                        </table>   
+                    
                     </div> <!-- table-responsive -->
                 </div>
                 

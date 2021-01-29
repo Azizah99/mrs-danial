@@ -73,19 +73,19 @@ public class ViewOrderServlet extends HttpServlet {
             
             while (rs.next()) {
                 int orderID = Integer.parseInt(rs.getString("orderID"));
-                int customer = Integer.parseInt(rs.getString("customer"));
-                int menu = Integer.parseInt(rs.getString("menu"));
+                String customer = rs.getString("customer");
+                String menu =rs.getString("menu");
                 int quantity = Integer.parseInt(rs.getString("quantity"));
                 String status = rs.getString("status");
                 
                 Order order = new Order();
                 order.setOrderID(orderID);
-                order.setCustomer(customer);
+                order.setUserName(customer);
                 order.setMenu(menu);
                 order.setQuantity(quantity);
                 order.setStatus(status);
                 orderList.add(order);
-                System.out.println("Fetch Order: " + order.getCustomer());
+                System.out.println("Fetch Order: " + order.getUserName());
             }
         }
         catch (SQLException ex) {            

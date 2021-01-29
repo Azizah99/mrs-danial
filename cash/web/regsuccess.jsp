@@ -66,7 +66,7 @@
           <ul class="nav navbar-nav navbar-right">
           <form class="navbar-form navbar-right" role="form" action="/cash/LoginServlet" method="post">
             <div class="form-group">
-              <input type="text" placeholder="Login" name="login" class="form-control">
+              <input type="text" placeholder="Username" name="userName" class="form-control">
             </div>
             <div class="form-group">
               <input type="password" placeholder="Password" name="password" class="form-control">
@@ -100,7 +100,7 @@
         
         <jsp:useBean id="newuser" class="bean.User" scope="session" />
         <p>Full name : <jsp:getProperty name="newuser" property="fullName"/></p>
-        <p>Login name: <jsp:getProperty name="newuser" property="login"/></p>
+        <p>Username: <jsp:getProperty name="newuser" property="userName"/></p>
         <p>Password  : <jsp:getProperty name="newuser" property="password"/></p>
       </div>
       

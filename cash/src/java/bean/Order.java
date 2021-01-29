@@ -14,8 +14,23 @@ import java.io.Serializable;
  */
 public class Order implements Serializable {
 
-    private int orderID, customer, menu, quantity;
-    private String status;
+
+    /**
+     * @return the userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    /**
+     * @param userName the userName to set
+     */
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    private int orderID, quantity;
+    private String status, menu, userName;
     /**
      * @return the orderID
      */
@@ -30,33 +45,21 @@ public class Order implements Serializable {
         this.orderID = orderID;
     }
 
+  
     /**
-     * @return the customer
+     * @return the status
      */
-    public int getCustomer() {
-        return customer;
+    public String getStatus() {
+        return status;
     }
 
     /**
-     * @param customer the customer to set
+     * @param status the status to set
      */
-    public void setCustomer(int customer) {
-        this.customer = customer;
+    public void setStatus(String status) {
+        this.status = status;
     }
-
-    /**
-     * @return the menu
-     */
-    public int getMenu() {
-        return menu;
-    }
-
-    /**
-     * @param menu the menu to set
-     */
-    public void setMenu(int menu) {
-        this.menu = menu;
-    }
+    
 
     /**
      * @return the quantity
@@ -71,19 +74,28 @@ public class Order implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    /**
-     * @return the status
-     */
-    public String getStatus() {
-        return status;
+    
+      public void save() {        
+    }
+    
+    public void update() {        
+    }
+    
+    public void delete() {        
     }
 
     /**
-     * @param status the status to set
+     * @return the menu
      */
-    public void setStatus(String status) {
-        this.status = status;
+    public String getMenu() {
+        return menu;
+    }
+
+    /**
+     * @param menu the menu to set
+     */
+    public void setMenu(String menu) {
+        this.menu = menu;
     }
     
 }

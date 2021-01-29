@@ -93,9 +93,9 @@
 <form class="form-horizontal" action="/cash/RegisterServlet" method="post">
   <fieldset>
     <div class="form-group">
-      <label for="login" class="col-lg-2 control-label">Login</label>
+      <label for="userName" class="col-lg-2 control-label">Login</label>
       <div class="col-lg-10">
-        <input class="form-control" id="login" name="login" placeholder="Login" type="text" required>
+        <input class="form-control" id="userName" name="userName" placeholder="Username" type="text" required>
       </div>
     </div>
     <div class="form-group">
@@ -105,9 +105,9 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="fullname" class="col-lg-2 control-label">Full name</label>
+      <label for="fullName" class="col-lg-2 control-label">Full name</label>
       <div class="col-lg-10">
-        <input class="form-control" id="fullname" name="fullname" placeholder="Full name" type="text" required>
+        <input class="form-control" id="fullName" name="fullName" placeholder="Full name" type="text" required>
       </div>
     </div>
     <div class="form-group">
@@ -124,7 +124,7 @@
       
       <div class="well">
       <footer>
-      	<p>&copy; RBK 2014 - SCJ/SCSJ 2303/3303</p>
+      	<p>Copyright &copy; 2021 FoodyMoody</p>
       </footer>
       </div>
 

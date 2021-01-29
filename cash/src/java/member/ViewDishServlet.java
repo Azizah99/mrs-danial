@@ -27,7 +27,7 @@ import jdbc.JDBCUtility;
  *
  * @author Lenovo
  */
-@WebServlet(name = "ViewDishServlet", urlPatterns = {"/member/ViewDishServlet"})
+@WebServlet(name = "ViewDishServlet", urlPatterns = {"/ViewDishServlet"})
 public class ViewDishServlet extends HttpServlet {
 
     private JDBCUtility jdbcUtility;
@@ -66,7 +66,7 @@ public class ViewDishServlet extends HttpServlet {
         
         ArrayList dishList = new ArrayList();        
         
-        String sqlQuery = "SELECT * FROM dishes WHERE status != 'inactive' ORDER BY id ASC";
+        String sqlQuery = "SELECT * FROM dishes WHERE status = 'active' ORDER BY id ASC";
         
         try {
             PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);

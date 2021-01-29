@@ -60,7 +60,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/cash/ViewDishServlet">View Dish List</a></li>
-            <li><a href="/cash/MemberViewCashServlet"><span class="glyphicon glyphicon-th-list"></span> View Cash</a></li> 
+            <li><a href="/cash/ViewCartServlet"><span class="glyphicon glyphicon-th-list"></span> View Cart</a></li>
+            <li><a href="/cash/ViewOrderServlet"><span class="glyphicon glyphicon-th-list"></span> View Order</a></li> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
       		<li class="dropdown">

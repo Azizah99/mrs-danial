@@ -67,7 +67,7 @@ public class RegisterServlet extends HttpServlet {
         String fullName = request.getParameter("fullName");
         String userType = "client";
         
-        String sqlInsert = "INSERT INTO user(userName, password, usertype, fullname) VALUES(?, ?, ?, ?)"; 
+        String sqlInsert = "INSERT INTO user(userName, password, userType, fullName) VALUES(?, ?, ?, ?)"; 
         
         try {
             PreparedStatement preparedStatement = con.prepareStatement(sqlInsert);

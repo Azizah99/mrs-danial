@@ -12,7 +12,7 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
     private String userName, password, userType, fullName, image;
-    private int id;
+
 
 
     /**
@@ -85,17 +85,5 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+  
 }
