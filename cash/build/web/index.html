@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Cash - Guest</title>
+    <title>FoodyMoody - Guest</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">CashWeb</span></a>
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">FOODY MOODY</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -77,75 +77,11 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Cash Web-App example</h1>
+        <h1>WELCOME TO FOODY MOODY</h1>
         <ul>
-          <li>Responsive application
+          <li>Fast delivery, deals & discounts and the best choice of restaurants. Order now! Choose your food, relax and we do the rest!
             <ul>
-              <li><a href="http://getbootstrap.com/">Twitter Bootstrap 3</a> CSS</li>
-              <li>Fixed top navigtion bar</li>
-              <li>Jumbotron for displaying important information</li>
-            </ul>
-          </li>
-          <li>Custom bootstrap CSS - <a href="http://bootswatch.com/slate/">Gunmetal Slate</a> from <a href="http://bootswatch.com">bootswatch</a> </li>
-          <li>Custom icon - <a href="http://glyphicons.com/">Glyphicons</a> glyph included free in Twitter Bootstrap <a href="http://getbootstrap.com/components/#glyphicons">glyphicons package</a></li>
-          <ul>
-            <li>How to use:
-              <ul>
-                <li class="style1">&lt;span class=&quot;glyphicon glyphicon-home&quot;&gt;&lt;/span&gt;</li>
-              </ul>
-            </li>
-          </ul>
-          <li>MVC
-            <ul>
-              <li>(M)odel - JavaBeans
-                <ul class="style1">
-                  <li>bean.Currency</li>
-                  <li>bean.User</li>
-                  <li>bean.CashRequest</li>
-                </ul>
-              </li>
-              <li>(V)iew - JSP for:
-                <ul>
-                  <li class="style1"> input - HTML Form </li>
-                  <li class="style1"> output - data table, info and operation status</li>
-                </ul>
-              </li>
-              <li>(C)ontroller - Servlet</li>
-            </ul>
-          </li>
-          <li>JSP
-            <ul> 
-              <li class="style1">get bean from session and use for page protection:</li>  
-              <li>&lt;c:if test=&quot;${sessionScope.adminprofile == null}&quot;&gt;</li> 
-              <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;% response.sendRedirect(request.getContextPath() + &quot;/admin/terminate.html&quot;); %&gt;</li> 
-              <li>&lt;/c:if&gt;<br/></li> 
-              <li>&nbsp;</li>  
-              <li class="style1">get bean from page/request/session and display properties:</li>  
-              <li>&lt;jsp:useBean id=&quot;memberprofile&quot; class=&quot;bean.User&quot; scope=&quot;session&quot; /&gt;</li>
-              <li>&lt;jsp:getProperty name=&quot;memberprofile&quot; property=&quot;fullName&quot;/&gt;</li>
-              <li>&nbsp;</li>  
-              <li><span class="style1">Set variable and increment value from ArrayList object</span>:</li>
-              <li>&lt;c:forEach items=&quot;${sessionScope.rqclist}&quot; var=&quot;currentrqc&quot; varStatus=&quot;loop&quot;&gt;</li>
-              <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;c:set var=&quot;amountinprocess&quot; scope=&quot;page&quot; value=&quot;${0}&quot;/&gt;</li>
-              <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;c:if test=&quot;${currentrqc.status == 'in process'}&quot;&gt;</li>              
-              <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;c:set var=&quot;amountinprocess&quot; scope=&quot;page&quot; value=&quot;${amountinprocess + currentrqc.amount}&quot;/&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/c:if&gt;</li>
-              <li>&lt;/c:forEach&gt;</li>
-              <li>&lt;p&gt;Amount in process: &lt;c:out value=&quot;${amountinprocess}&quot; /&gt;&lt;/p&gt;</li>
-              <li>&nbsp;</li>  
-              <li class="style1">Create URL using beans properties and display the url in link:</li>
-              <li>&lt;c:url value=&quot;crqapproval.jsp&quot; var=&quot;displayURL&quot;&gt;</li>
-              <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;c:param name=&quot;requestid&quot; value=&quot;${currentrqc.requestId}&quot; /&gt;</li> 
-              <li>&lt;/c:url&gt;</li>
-              <li>&lt;a href=&quot;&lt;c:out value='${displayURL}' /&gt;&quot;&gt;&lt;c:out value=&quot;${currentrqc.status}&quot; /&gt;&lt;/a&gt;</li>
-              <li>&nbsp;</li>  
-              <li class="style1">Create bean using GET method parameter:</li>
-              <li>&lt;jsp:useBean id=&quot;crq&quot; class=&quot;bean.RequestCash&quot; scope=&quot;page&quot;&gt;</li>
-              <li>&nbsp;&nbsp;&nbsp;&nbsp;&lt;jsp:setProperty name=&quot;crq&quot; property=&quot;login&quot; value=&quot;${param.login}&quot;/&gt;</li>
-              <li>&lt;/jsp:useBean&gt;</li>
-            </ul>
-          </li>
-        </ul>
+              
       </div>
       
       <div class="well">
@@ -154,7 +90,7 @@
       
       <div class="well">
       <footer>
-      	<p>&copy; RBK 2014 - SCJ/SCSJ 2303/3303</p>
+      	<p>Copyright &copy; 2021 FoodyMoody</p>
       </footer>
       </div>
 

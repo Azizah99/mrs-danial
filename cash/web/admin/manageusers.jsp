@@ -1,8 +1,3 @@
-<%-- 
-    Document   : manageusers
-    Created on : Nov 7, 2014, 4:05:24 PM
-    Author     : U
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -53,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="home.jsp"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">CashWeb</span></a>
+          <a class="navbar-brand" href="home.jsp"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">FOODY MOODY</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,7 +66,6 @@
                             (Admin) <b class="caret"></b></a>
 			        <ul class="dropdown-menu">
 			          <li><a href="/cash/admin/UserProfileServlet"><span class="glyphicon glyphicon-user"></span> User Profile</a></li>
-			          <li><a href="/cash/admin/SettingServlet"><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
 			          <li class="divider"></li>
 			          <li><a href="/cash/admin/logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			        </ul>
@@ -84,23 +78,15 @@
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Cash Web-App example</h1>
-        <ul>
-          <li>Responsive application</li>
-          <li>Bootstrap CSS</li>
-          <li>MVC
+         <div class="jumbotron">
+            <h1>WELCOME TO FOODY MOODY</h1>
             <ul>
-              <li>(M)odel - JavaBeans</li>
-              <li>(V)iew - JSP for input and output</li>
-              <li>(C)ontroller - Servlet</li>
+                <li>Fast delivery, deals & discounts and the best choice of restaurants. Order now! Choose your food, relax and we do the rest.</li>
             </ul>
-          </li>
-        </ul>
-      </div>
+        </div>
       
       <footer>
-      	<p>&copy; RBK 2014 - SCJ/SCSJ 2303/3303</p>
+      	<p>Copyright &copy; 2021 FoodyMoody</p>
       </footer>
 
     </div> <!-- /container -->

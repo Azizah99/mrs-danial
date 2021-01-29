@@ -57,19 +57,6 @@ public class User implements Serializable {
         this.fullName = fullName;
     }
 
-    /**
-     * @return the image
-     */
-    public String getImage() {
-        return image;
-    }
-
-    /**
-     * @param image the image to set
-     */
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     /**
      * @return the userName
@@ -85,5 +72,5 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-  
+
 }

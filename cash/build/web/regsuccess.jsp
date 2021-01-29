@@ -1,8 +1,4 @@
-<%-- 
-    Document   : regsuccess
-    Created on : Nov 5, 2014, 3:19:53 PM
-    Author     : MSI
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="bean.User" %>
@@ -17,7 +13,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Cash - Account not exist</title>
+    <title>FoodyMoody - Account not exist</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/cash/index.html"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">CashWeb</span></a>
+          <a class="navbar-brand" href="/cash/index.html"><span class="glyphicon glyphicon-home"></span> <span style="color:#FFFF00">FOODY MOODY</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,17 +77,9 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Cash Web-App example</h1>
+        <h1>WELCOME TO FOODY MOODY</h1>
         <ul>
-          <li>Responsive application</li>
-          <li>Bootstrap CSS</li>
-          <li>MVC
-            <ul>
-              <li>(M)odel - JavaBeans</li>
-              <li>(V)iew - JSP for input and output</li>
-              <li>(C)ontroller - Servlet</li>
-            </ul>
-          </li>
+          <li>Fast delivery, deals & discounts and the best choice of restaurants. Order now! Choose your food, relax and we do the rest!
         </ul>
       </div>
       
@@ -106,7 +94,7 @@
       
       <div class="well">
       <footer>
-      	<p>&copy; RBK 2014 - SCJ/SCSJ 2303/3303</p>
+      	<p>Copyright &copy; 2021 FoodyMoody</p>
       </footer>
       </div>
 

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package member;
+package admin;
 
 import bean.User;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.servlet.RequestDispatcher;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,13 +20,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
 
-/**
- *
- * @author MSI
- */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
-
+@WebServlet(name = "AdminChangePasswordServlet", urlPatterns = {"/AdminChangePasswordServlet"})
+public class AdminChangePasswordServlet extends HttpServlet {
+    
     private JDBCUtility jdbcUtility;
     private Connection con;
     
@@ -61,45 +57,27 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        User user = null;
-        
         //Get the session object
 	HttpSession session = request.getSession();
         
-        String userName = request.getParameter("userName");
-        String password = request.getParameter("password");
-        String userType = "", fullName = "";
+        User user = (User)session.getAttribute("adminprofile");
+        String userName = user.getUserName();
         
-        String sqlQuery = "SELECT * FROM user WHERE userName = ? AND password = ? AND usertype = 'client'";
+        //get form data from VIEW > V-I        
+        String password = request.getParameter("password");
+        
+        String sqlUpdate = "UPDATE user SET password= ? WHERE userName = ?"; 
         
         try {
-            PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
-            preparedStatement.setString(1, userName);
-            preparedStatement.setString(2, password);
-            ResultSet rs = preparedStatement.executeQuery();
-            
-            while (rs.next()) {
-                userType = rs.getString("usertype");
-                fullName = rs.getString("fullname");
-                
-                
-                user = new User();
-                user.setUserName(userName);
-                user.setFullName(fullName);
-                user.setUserType(userType);
-              
-            }
+            PreparedStatement preparedStatement = con.prepareStatement(sqlUpdate);
+            preparedStatement.setString(1, password);
+            preparedStatement.setString(2, userName);
+            preparedStatement.executeUpdate();
         }
         catch (SQLException ex) {            
         }
         
-        if (user != null) {
-            session.setAttribute("memberprofile", user);
-            response.sendRedirect(request.getContextPath() + "/home.jsp");
-        }
-        else {
-            response.sendRedirect(request.getContextPath() + "/not-exist.html");
-        }            
+        response.sendRedirect(request.getContextPath() + "/admin/passwordchanged.jsp");        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
