@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2021 at 10:28 AM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: Feb 01, 2021 at 01:48 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,40 +32,41 @@ CREATE TABLE `dishes` (
   `menu` varchar(300) NOT NULL,
   `price` double NOT NULL,
   `photo` varchar(300) NOT NULL DEFAULT '0',
-  `category` varchar(100) NOT NULL
+  `category` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `dishes`
 --
 
-INSERT INTO `dishes` (`id`, `menu`, `price`, `photo`, `category`) VALUES
-(1, 'Nasi goreng kampung', 9, '0', 'Food');
+INSERT INTO `dishes` (`id`, `menu`, `price`, `photo`, `category`, `status`) VALUES
+(1, 'Nasi goreng kampung', 9, '0', 'Food', 'active'),
+(2, 'mee goreng', 7, '0', 'Food', 'active');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Table structure for table `orderdish`
 --
 
-CREATE TABLE `order` (
-  `id` int(11) NOT NULL,
-  `customer` varchar(300) NOT NULL,
-  `menu` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
+CREATE TABLE `orderdish` (
   `orderID` int(11) NOT NULL,
-  `status` varchar(100) NOT NULL DEFAULT 'pending'
+  `userName` varchar(100) NOT NULL,
+  `menu` int(11) NOT NULL,
+  `quantity` int(100) NOT NULL,
+  `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `order`
+-- Dumping data for table `orderdish`
 --
 
-INSERT INTO `order` (`id`, `customer`, `menu`, `quantity`, `orderID`, `status`) VALUES
-(1, 'Fatin', 0, 1, 0, ''),
-(2, 'Fatin', 0, 1, 0, ''),
-(3, 'Tikah', 2, 1, 1, ''),
-(4, 'Tikah', 3, 1, 1, '');
+INSERT INTO `orderdish` (`orderID`, `userName`, `menu`, `quantity`, `status`) VALUES
+(1, 'we', 2, 2, 'Delivered'),
+(2, 'we', 2, 4, 'Rejected'),
+(4, 'q', 2, 2, 'Delivered'),
+(5, 'q', 1, 1, 'not confirm');
 
 -- --------------------------------------------------------
 
@@ -74,8 +75,20 @@ INSERT INTO `order` (`id`, `customer`, `menu`, `quantity`, `orderID`, `status`) 
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL
+  `userName` varchar(200) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `userType` varchar(50) NOT NULL,
+  `fullName` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userName`, `password`, `userType`, `fullName`) VALUES
+('q', 'q', 'client', 'umi haiza'),
+('umi', 'wq', 'admin', 'Umi haiza binti mahamud'),
+('we', 'we', 'client', 'wewewe');
 
 --
 -- Indexes for dumped tables
@@ -89,16 +102,16 @@ ALTER TABLE `dishes`
   ADD UNIQUE KEY `menu` (`menu`);
 
 --
--- Indexes for table `order`
+-- Indexes for table `orderdish`
 --
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `orderdish`
+  ADD PRIMARY KEY (`orderID`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`userName`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -108,19 +121,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `dishes`
 --
 ALTER TABLE `dishes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT for table `orderdish`
 --
-ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `orderdish`
+  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
